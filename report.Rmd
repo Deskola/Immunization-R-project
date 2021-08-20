@@ -1,0 +1,50 @@
+
+---
+title: "report.Rmd"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+```
+
+## Prediction Summary
+
+
+
+```{r cars}
+summary(a$data)
+```
+
+## Including Plots
+
+```{r pressure, echo=FALSE}
+plot(model_rf)
+
+```
+Prediction Results and Plot
+
+```{r result, echo=FALSE}
+paste(b$pred)
+
+```
+
+```{r prediction, echo=FALSE}
+plot(b$pred)
+
+```
+
+Confusuion Matrix
+```{r confusionmatrix, echo=FALSE}
+
+confusionMatrix(b$pred, c$predData$dpt3)
+
+```
+Variable importance
+```{r importantfeatures, echo=FALSE}
+randomForest::importance(model_rf)
+varImpPlot(model_rf)
+
+```
+
+
